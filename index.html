@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es" data-edicion="presentacion">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#121416">
+<meta name="description" content="Catálogo Challenger, edición de 60 años.">
+<title>Challenger · Catálogo 60 años · Presentación</title>
+<link rel="stylesheet" href="../estilo.css">
+<script defer src="../texto.js"></script>
+<script defer src="../indice.js"></script>
+<script defer src="../visor.js"></script>
+</head>
+<body>
+<div class="app">
+<header>
+  <div class="brand"><span class="mark" aria-hidden="true"></span><div><strong>CHALLENGER</strong><span>Catálogo · Edición 60 años</span></div></div>
+  <button id="contents" type="button" aria-haspopup="dialog"><span aria-hidden="true">☰</span> Índice</button>
+</header>
+<main aria-label="Catálogo Challenger">
+  <div class="reading">
+    <div id="book" aria-hidden="true"><img id="left" alt="" hidden draggable="false"><img id="right" alt="" src="../paginas/001.webp" draggable="false"><canvas id="curl" hidden></canvas></div>
+    <p id="image-error" role="alert" hidden>La imagen de esta página no se pudo abrir. Comprueba que la carpeta de recursos esté junto al visor.</p>
+  </div>
+  <div class="toolbar">
+    <nav id="controls" aria-label="Controles del catálogo">
+      <div id="control-row">
+        <button id="prev" type="button" aria-label="Página anterior" aria-keyshortcuts="ArrowLeft">←</button>
+        <button id="next" type="button" aria-label="Página siguiente" aria-keyshortcuts="ArrowRight">→</button>
+        <form id="jump">
+          <label class="sr" for="page">Ir a la página (1 a 212)</label>
+          <input id="page" type="number" min="1" max="212" value="1" required inputmode="numeric">
+          <span aria-hidden="true">/ 212</span>
+          <button class="go" type="submit">Ir</button>
+        </form>
+        <button type="button" id="play" title="Avance automático cada 3 segundos">Reproducir</button>
+        <button type="button" id="full-view" aria-label="Vista completa de dos páginas" title="Vista completa de dos páginas">Vista completa</button>
+      </div>
+    </nav>
+    <p id="controls-hint" hidden><span aria-hidden="true">↔</span> Desliza para ver más controles</p>
+  </div>
+  <p id="status" class="sr" role="status" aria-atomic="true">Página 1 de 212</p>
+  <section id="transcript" class="sr" aria-label="Texto de las páginas visibles"></section>
+  <noscript><p>Activa JavaScript para navegar por las 212 páginas del catálogo.</p></noscript>
+</main>
+</div>
+<dialog id="index-dialog" aria-labelledby="index-title">
+  <div class="dialog-head"><h1 id="index-title">Índice</h1><button class="close" type="button" aria-label="Cerrar índice" autofocus>×</button></div>
+  <ul id="index-list"></ul>
+</dialog>
+</body>
+</html>
